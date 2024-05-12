@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textfield Effects</title>
+<style>
+  /* Add some basic styling */
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid rgba(229, 52, 158, 0.954);
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  input[type="text"]:focus {
+    border-color: rgba(42, 219, 232, 0.942);
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="textField" onchange="applyOnChangeEffect()" onfocus="applyOnFocusEffect()" 
+onblur="applyOnBlurEffect()" placeholder="Type something...">
+
+<script>
+  function applyOnChangeEffect() {
+    document.getElementById("textField").style.backgroundColor = "#8b6c5c";
+  }
+
+  function applyOnFocusEffect() {
+    document.getElementById("textField").style.border = "5px solid yellow";
+  }
+
+  function applyOnBlurEffect() {
+    document.getElementById("textField").style.border = "4px solid orange";
+  }
+</script>
+
+</body>
+</html>

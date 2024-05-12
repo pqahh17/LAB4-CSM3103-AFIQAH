@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Paragraph Color</title>
+<style>
+  /* Add some basic styling */
+  p {
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<p id="paragraph">This is a paragraph.</p>
+
+<script>
+  // Get the paragraph element
+  var paragraph = document.getElementById("paragraph");
+
+  // Add event listeners to change background color
+  paragraph.addEventListener("click", function() {
+    this.style.backgroundColor = "yellow";
+  });
+
+  paragraph.addEventListener("mousedown", function() {
+    this.style.backgroundColor = "blue";
+  });
+
+  paragraph.addEventListener("mouseover", function() {
+    this.style.backgroundColor = "red";
+  });
+
+  paragraph.addEventListener("mouseout", function() {
+    this.style.backgroundColor = "";
+  });
+</script>
+
+</body>
+</html>

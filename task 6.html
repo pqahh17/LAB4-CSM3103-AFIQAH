@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Squares</title>
+<style>
+  #container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: lightgray;
+    margin: 20px auto;
+  }
+  .square {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(0, 166, 255);
+  }
+</style>
+</head>
+<body>
+<div id="container">
+  <div class="square" id="square1"></div>
+  <div class="square" id="square2"></div>
+</div>
+<button onclick="startAnimation()">Start</button>
+<button onclick="stopAnimation()">Stop</button>
+
+<script>
+  var animationInterval;
+  
+  function startAnimation() {
+    animationInterval = setInterval(moveSquares, 500);
+  }
+  
+  function stopAnimation() {
+    clearInterval(animationInterval);
+  }
+  
+  function moveSquares() {
+    var bigSquare = document.getElementById('container');
+    var smallSquare1 = document.getElementById('square1');
+    var smallSquare2 = document.getElementById('square2');
+    
+    var maxX = bigSquare.offsetWidth - smallSquare1.offsetWidth;
+    var maxY = bigSquare.offsetHeight - smallSquare1.offsetHeight;
+    
+    var randomX1 = Math.floor(Math.random() * maxX);
+    var randomY1 = Math.floor(Math.random() * maxY);
+    var randomX2 = Math.floor(Math.random() * maxX);
+    var randomY2 = Math.floor(Math.random() * maxY);
+    
+    smallSquare1.style.left = randomX1 + 'px';
+    smallSquare1.style.top = randomY1 + 'px';
+    smallSquare2.style.left = randomX2 + 'px';
+    smallSquare2.style.top = randomY2 + 'px';
+  }
+  
+  var bigSquare = document.getElementById('container');
+  bigSquare.addEventListener('mouseout', function() {
+    this.style.backgroundColor = 'green';
+  });
+</script>
+</body>
+</html>
